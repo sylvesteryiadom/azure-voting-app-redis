@@ -22,7 +22,7 @@ pipeline {
                     echo "Workspace is $WORKSPACE"
                     sh ''' cd azure-vote/'''
                         script {
-                        docker.withRegistry('https://registry.hub.docker.com/', 'DockerHub') {
+                        docker.withRegistry('https://hub.docker.com/', 'DockerHub') {
                         def image = docker.build("sylvesteryiadom/jenkins-course:latest")
                         image.push()
                         }
