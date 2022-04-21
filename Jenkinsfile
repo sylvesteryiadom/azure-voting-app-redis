@@ -16,6 +16,11 @@ pipeline {
                     docker images -a
                     cd ..'''
             }
+            post{ 
+                success { 
+                    echo 'Docker build was successful'
+                }
+            }
         }
     }
     
