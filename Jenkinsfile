@@ -20,7 +20,9 @@ pipeline {
         stage('Container push') {
             steps {
                     echo "Workspace is $WORKSPACE"
-                    sh ''' cd azure-vote/'''
+                    sh ''' cd azure-vote/
+                    sudo -i
+                    '''
                         script {
                         docker.withRegistry('https://hub.docker.com/', 'DockerHub') {
                         def image = docker.build("sylvesteryiadom/jenkins-course:latest")
