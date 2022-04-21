@@ -8,7 +8,7 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
+        stage('Docker') {
             steps {
                 sh '''
                     cd azure-vote/
@@ -27,7 +27,6 @@ pipeline {
                 }
             }
         }
-
             post{ 
                 success { 
                     echo 'Docker build was successful'
