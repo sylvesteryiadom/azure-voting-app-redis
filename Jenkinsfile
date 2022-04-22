@@ -39,12 +39,24 @@
 //     }
     
 // }
-node{
-    stage("Echo on master"){
-        if(env.BRANCH_NAME == 'master'){
-            echo "This is the master branch"
-        }else{
-            echo "This is NOT the master branch"
+// node{
+//     stage("Echo on master"){
+//         if(env.BRANCH_NAME == 'master'){
+//             echo "This is the master branch"
+//         }else{
+//             echo "This is NOT the master branch"
+//         }
+//     }
+// }
+
+pipeline {
+    agent any 
+        stages {
+            stage('starting') {
+                // when {}
+                steps {
+                echo "Declarative branch"
+                }
         }
     }
 }
