@@ -52,10 +52,22 @@
 pipeline {
     agent any 
         stages {
-            stage('starting') {
-                // when {}
+            stage('Stage 1 - compiling code') {
+                
                 steps {
-                echo "Declarative branch"
+                echo "Compiling the code from SCM "
+                }
+        }
+                    stage('Stage 2 - testing code') {
+                
+                steps {
+                echo "Testing the code now "
+                }
+        }
+                    stage('Stage 3 - Deploying the code') {
+                
+                steps {
+                 echo "Deploying the code to MASTER "
                 }
         }
     }
